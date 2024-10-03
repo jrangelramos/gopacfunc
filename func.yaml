@@ -1,4 +1,12 @@
 specVersion: 0.36.0
 name: gopacfunc
 runtime: go
+registry: image-registry.openshift-image-registry.svc:5000/pac-test
 created: 2024-10-01T10:50:40.630375266-03:00
+build:
+  git:
+    url: https://github.com/jrangelramos/gopacfunc
+    revision: main
+  builder: s2i
+deploy:
+  image: image-registry.openshift-image-registry.svc:5000/pac-test/gopacfunc:latest
